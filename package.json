@@ -1,0 +1,51 @@
+{
+  "name": "space-expedition",
+  "main": "desktop/main.mjs",
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "tsx src/main.ts",
+    "desktop": "npm run build && electron .",
+    "desktop-dev": "electron .",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "package:win": "npm run build && electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.spaceexpedition.desktop",
+    "productName": "Space Expedition",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "dist/**/*",
+      "package.json",
+      "README.md",
+      "DESIGN.md"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "Space-Expedition-${version}-Portable.exe"
+    },
+    "portable": {
+      "artifactName": "Space-Expedition-${version}-Portable.exe"
+    }
+  }
+}

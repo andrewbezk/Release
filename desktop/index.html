@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';">
+<title>Space Expedition</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="app-shell">
+<header class="topbar"><div class="brand"><div class="brand-mark">✦</div><div><h1>SPACE EXPEDITION</h1><p>MISSION CONTROL · LOCAL CAMPAIGN</p></div></div><div class="top-actions"><span class="status"><i></i> OFFLINE SYSTEM</span><button class="ghost" id="newSessionBtn">＋ New mission</button><button class="ghost" id="continueBtn">↻ Continue</button></div></header>
+<main class="layout">
+<section class="left-column">
+<div class="panel log-panel"><div class="panel-heading"><div><span class="eyebrow">TRANSMISSION</span><h2>Mission log</h2></div><button class="icon-button" id="clearLog" title="Clear display">⌫</button></div><div class="log" id="log"><div class="log-entry system"><span class="time">SYSTEM</span><span>Mission control online. Restore or begin a session.</span></div></div>
+<div class="command-row"><input id="commandInput" placeholder="Type a command / action…" autocomplete="off"><button id="sendCommand" class="primary">Execute <span>↗</span></button></div><p class="hint">Quick commands: status · history · help · create char · save · load</p></div>
+<div class="panel action-panel"><div class="panel-heading"><div><span class="eyebrow">OPERATIONS</span><h2>Take action</h2></div></div><div class="action-grid"><label>Action<select id="action"><option value="challenge">Challenge / attack</option><option value="recover">Recover</option><option value="ability">Use ability</option></select></label><label>Actor<select id="actor"></select></label><label>Target<select id="target"></select></label><label id="abilityWrap" class="hidden">Assigned ability<select id="ability"></select></label><button id="actBtn" class="primary wide">Run operation</button></div></div>
+</section>
+<aside class="right-column">
+<div class="panel crew-panel"><div class="panel-heading"><div><span class="eyebrow">PERSONNEL</span><h2>Crew roster</h2></div><span class="count" id="crewCount">0</span></div><div id="crew" class="crew-list"></div><button id="importBtn" class="secondary wide">＋ Import crew JSON</button><button id="createCrewBtn" class="secondary wide">＋ New crew member</button></div>
+<div class="panel catalog-panel"><div class="panel-heading"><div><span class="eyebrow">INVENTORY</span><h2>Equipment & abilities</h2></div></div><div class="catalog-tabs"><button class="tab active" data-tab="items">Items</button><button class="tab" data-tab="abilities">Abilities</button></div><div id="catalog"></div><div class="assign-row"><select id="assignCharacter" aria-label="Crew member"></select><select id="assignObject" aria-label="Item or ability"></select><button id="assignBtn" title="Assign">＋</button></div><button id="createObjectBtn" class="secondary wide">＋ Create item / ability</button></div>
+<div class="panel saves-panel"><div class="panel-heading"><div><span class="eyebrow">PERSISTENCE</span><h2>Save station</h2></div></div><div class="save-row"><input id="saveName" value="campaign" placeholder="Save name"><button id="saveBtn" class="primary">Save</button></div><div class="save-row"><select id="saveSelect"></select><button id="loadBtn" class="secondary">Load</button></div><div class="save-foot"><span>Auto-save: <b>last-session.json</b></span><button id="refreshSaves" class="text-button">Refresh</button></div></div>
+</aside></main><footer><span>SPACE EXPEDITION <b>v1.6</b></span><span id="turnLabel">TURN 0</span><span>JSON PERSISTENCE ACTIVE</span></footer>
+</div>
+<dialog id="inputDialog" class="input-dialog"><form method="dialog" id="inputForm"><h2 id="dialogTitle">Create object</h2><div id="dialogFields"></div><div class="modal-actions"><button type="button" class="secondary" id="dialogCancel">Cancel</button><button type="submit" class="primary">Confirm</button></div></form></dialog>
+<script src="renderer.js"></script></body></html>

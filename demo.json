@@ -1,0 +1,23 @@
+{
+  "root": {
+    "id": "root",
+    "name": "root",
+    "kind": "container",
+    "children": [
+      {
+        "id": "c1",
+        "name": "Notes",
+        "kind": "container",
+        "children": []
+      },
+      {
+        "id": "p1",
+        "name": "First paragraph",
+        "kind": "leaf",
+        "type": "paragraph",
+        "children": []
+      }
+    ]
+  },
+  "currentPath": "/"
+}

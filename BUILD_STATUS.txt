@@ -1,0 +1,7 @@
+P17 deployment preparation status
+
+- TypeScript production build: verified using the globally available TypeScript compiler.
+- Automated tests: 5/5 passed.
+- Windows portable packaging configuration: added (electron-builder portable x64).
+- Writable save/autosave location: moved to Electron userData directory for packaged-app compatibility.
+- Windows EXE: NOT built in this environment. This container has no Windows Electron binary and npm registry access failed with DNS EAI_AGAIN. Run PACKAGE_WINDOWS.bat on a Windows PC with internet access to produce the portable EXE in release/.

@@ -1,0 +1,22 @@
+{
+  "characters": [
+    {
+      "id": "explorer-01",
+      "name": "Alex Explorer",
+      "class": "explorer",
+      "stats": { "health": 100, "armor": 15, "attackPower": 25, "resist": 5 }
+    },
+    {
+      "id": "engineer-01",
+      "name": "Morgan Engineer",
+      "class": "engineer",
+      "stats": { "health": 110, "armor": 25, "attackPower": 20, "resist": 10 }
+    },
+    {
+      "id": "medic-01",
+      "name": "Taylor Medic",
+      "class": "explorer",
+      "stats": { "health": 95, "armor": 10, "attackPower": 18, "resist": 0 }
+    }
+  ]
+}

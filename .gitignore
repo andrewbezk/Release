@@ -1,0 +1,4 @@
+node_modules/
+dist/
+game-save.json
+*.save.json
